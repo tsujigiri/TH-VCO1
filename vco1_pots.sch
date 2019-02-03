@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="7.4.0">
+<eagle version="9.3.0">
 <drawing>
 <settings>
 <setting alwaysvectorfont="yes"/>
+<setting keepoldvectorfont="yes"/>
 <setting verticaltext="up"/>
 </settings>
 <grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
@@ -3013,7 +3014,7 @@ Standard 10-pin 0.1" header. Use with straight break away headers (SKU : PRT-001
 <part name="FINE" library="MusicThingModular" deviceset="9MM_SNAP-IN_POT_CHASSIS" device="" value="100k"/>
 <part name="COARSE" library="MusicThingModular" deviceset="9MM_SNAP-IN_POT_CHASSIS" device="" value="100k"/>
 <part name="R1" library="MusicThingModular" deviceset="RESISTOR" device="7MM" value="100k"/>
-<part name="R3" library="MusicThingModular" deviceset="RESISTOR" device="7MM" value="2.2m"/>
+<part name="R37" library="MusicThingModular" deviceset="RESISTOR" device="7MM" value="2.2m"/>
 <part name="SUPPLY1" library="supply2" deviceset="GND" device=""/>
 <part name="SUPPLY2" library="supply2" deviceset="GND" device=""/>
 <part name="SUPPLY3" library="supply2" deviceset="GND" device=""/>
@@ -3063,55 +3064,173 @@ Standard 10-pin 0.1" header. Use with straight break away headers (SKU : PRT-001
 <text x="71.12" y="195.58" size="1.778" layer="91">2.4M = for 12v</text>
 </plain>
 <instances>
-<instance part="1V/OCT" gate="G$1" x="38.1" y="294.64" rot="R180"/>
-<instance part="EXP_FM" gate="G$1" x="38.1" y="276.86" rot="R180"/>
-<instance part="LINEAR_FM" gate="G$1" x="325.12" y="175.26"/>
-<instance part="FINE" gate="G$1" x="40.64" y="203.2"/>
-<instance part="COARSE" gate="G$1" x="40.64" y="243.84"/>
-<instance part="R1" gate="G$1" x="76.2" y="292.1"/>
-<instance part="R3" gate="G$1" x="119.38" y="243.84" rot="R180"/>
-<instance part="SUPPLY1" gate="GND" x="48.26" y="299.72"/>
-<instance part="SUPPLY2" gate="GND" x="50.8" y="279.4"/>
-<instance part="SUPPLY3" gate="GND" x="60.96" y="254"/>
-<instance part="R4" gate="G$1" x="76.2" y="266.7" rot="R180"/>
-<instance part="SUPPLY4" gate="+12V" x="40.64" y="256.54"/>
-<instance part="SUPPLY5" gate="GND" x="33.02" y="238.76"/>
-<instance part="SUPPLY6" gate="G$1" x="40.64" y="231.14"/>
-<instance part="R5" gate="G$1" x="76.2" y="243.84"/>
-<instance part="SUPPLY7" gate="GND" x="33.02" y="198.12"/>
-<instance part="SUPPLY8" gate="G$1" x="40.64" y="190.5"/>
-<instance part="SUPPLY9" gate="+12V" x="40.64" y="215.9"/>
-<instance part="R6" gate="G$1" x="76.2" y="203.2" rot="R180"/>
-<instance part="FM_LEVEL" gate="G$1" x="60.96" y="266.7"/>
-<instance part="SUPPLY16" gate="GND" x="320.04" y="165.1"/>
-<instance part="LIN_FM_LEVEL1" gate="G$1" x="294.64" y="185.42" rot="R180"/>
-<instance part="R11" gate="G$1" x="271.78" y="185.42"/>
-<instance part="SUPPLY17" gate="GND" x="289.56" y="190.5"/>
-<instance part="C2" gate="G$1" x="312.42" y="177.8" rot="R90"/>
-<instance part="TRIANGLE_OUT" gate="G$1" x="314.96" y="246.38"/>
-<instance part="SUPPLY22" gate="GND" x="309.88" y="238.76"/>
-<instance part="R14" gate="G$1" x="302.26" y="248.92" rot="R180"/>
-<instance part="R29" gate="G$1" x="284.48" y="91.44" rot="R180"/>
-<instance part="SINE_OUT" gate="G$1" x="299.72" y="88.9"/>
-<instance part="SUPPLY30" gate="GND" x="294.64" y="78.74"/>
-<instance part="R32" gate="G$1" x="55.88" y="83.82" rot="R180"/>
-<instance part="R33" gate="G$1" x="68.58" y="73.66" rot="R270"/>
-<instance part="SUPPLY31" gate="GND" x="68.58" y="60.96"/>
-<instance part="PULSE_OUT" gate="G$1" x="88.9" y="81.28"/>
-<instance part="SUPPLY32" gate="GND" x="83.82" y="71.12"/>
-<instance part="PWM_INPUT" gate="G$1" x="40.64" y="162.56" rot="R180"/>
-<instance part="PULSE_WIDTH" gate="G$1" x="43.18" y="129.54"/>
-<instance part="SUPPLY33" gate="GND" x="53.34" y="165.1"/>
-<instance part="SUPPLY34" gate="GND" x="63.5" y="139.7"/>
-<instance part="R34" gate="G$1" x="78.74" y="152.4"/>
-<instance part="SUPPLY35" gate="+12V" x="43.18" y="142.24"/>
-<instance part="SUPPLY36" gate="GND" x="35.56" y="124.46"/>
-<instance part="SUPPLY37" gate="G$1" x="43.18" y="116.84"/>
-<instance part="R35" gate="G$1" x="78.74" y="129.54"/>
-<instance part="PWM_CV" gate="G$1" x="63.5" y="152.4"/>
-<instance part="JP1" gate="G$1" x="170.18" y="228.6"/>
-<instance part="SUPPLY10" gate="GND" x="53.34" y="259.08"/>
-<instance part="SUPPLY11" gate="GND" x="55.88" y="147.32"/>
+<instance part="1V/OCT" gate="G$1" x="38.1" y="294.64" smashed="yes" rot="R180">
+<attribute name="NAME" x="40.64" y="290.576" size="1.778" layer="95" rot="R180"/>
+</instance>
+<instance part="EXP_FM" gate="G$1" x="38.1" y="276.86" smashed="yes" rot="R180">
+<attribute name="NAME" x="40.64" y="272.796" size="1.778" layer="95" rot="R180"/>
+</instance>
+<instance part="LINEAR_FM" gate="G$1" x="325.12" y="175.26" smashed="yes">
+<attribute name="NAME" x="322.58" y="179.324" size="1.778" layer="95"/>
+</instance>
+<instance part="FINE" gate="G$1" x="40.64" y="203.2" smashed="yes">
+<attribute name="NAME" x="35.56" y="205.74" size="1.778" layer="95" rot="R90"/>
+<attribute name="VALUE" x="38.1" y="205.74" size="1.778" layer="96" rot="R90"/>
+</instance>
+<instance part="COARSE" gate="G$1" x="40.64" y="243.84" smashed="yes">
+<attribute name="NAME" x="35.56" y="246.38" size="1.778" layer="95" rot="R90"/>
+<attribute name="VALUE" x="38.1" y="246.38" size="1.778" layer="96" rot="R90"/>
+</instance>
+<instance part="R1" gate="G$1" x="76.2" y="292.1" smashed="yes">
+<attribute name="NAME" x="72.39" y="293.5986" size="1.778" layer="95"/>
+<attribute name="VALUE" x="72.39" y="288.798" size="1.778" layer="96"/>
+</instance>
+<instance part="R37" gate="G$1" x="119.38" y="243.84" smashed="yes" rot="R180">
+<attribute name="NAME" x="123.19" y="242.3414" size="1.778" layer="95" rot="R180"/>
+<attribute name="VALUE" x="123.19" y="247.142" size="1.778" layer="96" rot="R180"/>
+</instance>
+<instance part="SUPPLY1" gate="GND" x="48.26" y="299.72" smashed="yes">
+<attribute name="VALUE" x="46.355" y="296.545" size="1.778" layer="96"/>
+</instance>
+<instance part="SUPPLY2" gate="GND" x="50.8" y="279.4" smashed="yes">
+<attribute name="VALUE" x="48.895" y="276.225" size="1.778" layer="96"/>
+</instance>
+<instance part="SUPPLY3" gate="GND" x="60.96" y="254" smashed="yes">
+<attribute name="VALUE" x="59.055" y="250.825" size="1.778" layer="96"/>
+</instance>
+<instance part="R4" gate="G$1" x="76.2" y="266.7" smashed="yes" rot="R180">
+<attribute name="NAME" x="80.01" y="265.2014" size="1.778" layer="95" rot="R180"/>
+<attribute name="VALUE" x="80.01" y="270.002" size="1.778" layer="96" rot="R180"/>
+</instance>
+<instance part="SUPPLY4" gate="+12V" x="40.64" y="256.54" smashed="yes">
+<attribute name="VALUE" x="38.1" y="259.715" size="1.778" layer="96"/>
+</instance>
+<instance part="SUPPLY5" gate="GND" x="33.02" y="238.76" smashed="yes">
+<attribute name="VALUE" x="31.115" y="235.585" size="1.778" layer="96"/>
+</instance>
+<instance part="SUPPLY6" gate="G$1" x="40.64" y="231.14" smashed="yes">
+<attribute name="VALUE" x="37.465" y="226.441" size="1.778" layer="96"/>
+</instance>
+<instance part="R5" gate="G$1" x="76.2" y="243.84" smashed="yes">
+<attribute name="NAME" x="72.39" y="245.3386" size="1.778" layer="95"/>
+<attribute name="VALUE" x="72.39" y="240.538" size="1.778" layer="96"/>
+</instance>
+<instance part="SUPPLY7" gate="GND" x="33.02" y="198.12" smashed="yes">
+<attribute name="VALUE" x="31.115" y="194.945" size="1.778" layer="96"/>
+</instance>
+<instance part="SUPPLY8" gate="G$1" x="40.64" y="190.5" smashed="yes">
+<attribute name="VALUE" x="37.465" y="185.801" size="1.778" layer="96"/>
+</instance>
+<instance part="SUPPLY9" gate="+12V" x="40.64" y="215.9" smashed="yes">
+<attribute name="VALUE" x="38.1" y="219.075" size="1.778" layer="96"/>
+</instance>
+<instance part="R6" gate="G$1" x="76.2" y="203.2" smashed="yes" rot="R180">
+<attribute name="NAME" x="80.01" y="201.7014" size="1.778" layer="95" rot="R180"/>
+<attribute name="VALUE" x="80.01" y="206.502" size="1.778" layer="96" rot="R180"/>
+</instance>
+<instance part="FM_LEVEL" gate="G$1" x="60.96" y="266.7" smashed="yes">
+<attribute name="NAME" x="55.88" y="269.24" size="1.778" layer="95" rot="R90"/>
+<attribute name="VALUE" x="58.42" y="269.24" size="1.778" layer="96" rot="R90"/>
+</instance>
+<instance part="SUPPLY16" gate="GND" x="320.04" y="165.1" smashed="yes">
+<attribute name="VALUE" x="318.135" y="161.925" size="1.778" layer="96"/>
+</instance>
+<instance part="LIN_FM_LEVEL1" gate="G$1" x="294.64" y="185.42" smashed="yes" rot="R180">
+<attribute name="NAME" x="299.72" y="182.88" size="1.778" layer="95" rot="R270"/>
+<attribute name="VALUE" x="297.18" y="182.88" size="1.778" layer="96" rot="R270"/>
+</instance>
+<instance part="R11" gate="G$1" x="271.78" y="185.42" smashed="yes">
+<attribute name="NAME" x="267.97" y="186.9186" size="1.778" layer="95"/>
+<attribute name="VALUE" x="267.97" y="182.118" size="1.778" layer="96"/>
+</instance>
+<instance part="SUPPLY17" gate="GND" x="289.56" y="190.5" smashed="yes">
+<attribute name="VALUE" x="287.655" y="187.325" size="1.778" layer="96"/>
+</instance>
+<instance part="C2" gate="G$1" x="312.42" y="177.8" smashed="yes" rot="R90">
+<attribute name="NAME" x="317.373" y="176.022" size="1.778" layer="95" rot="R180"/>
+<attribute name="VALUE" x="317.627" y="181.61" size="1.778" layer="96" rot="R180"/>
+</instance>
+<instance part="TRIANGLE_OUT" gate="G$1" x="314.96" y="246.38" smashed="yes">
+<attribute name="NAME" x="312.42" y="250.444" size="1.778" layer="95"/>
+</instance>
+<instance part="SUPPLY22" gate="GND" x="309.88" y="238.76" smashed="yes">
+<attribute name="VALUE" x="307.975" y="235.585" size="1.778" layer="96"/>
+</instance>
+<instance part="R14" gate="G$1" x="302.26" y="248.92" smashed="yes" rot="R180">
+<attribute name="NAME" x="306.07" y="247.4214" size="1.778" layer="95" rot="R180"/>
+<attribute name="VALUE" x="306.07" y="252.222" size="1.778" layer="96" rot="R180"/>
+</instance>
+<instance part="R29" gate="G$1" x="284.48" y="91.44" smashed="yes" rot="R180">
+<attribute name="NAME" x="288.29" y="89.9414" size="1.778" layer="95" rot="R180"/>
+<attribute name="VALUE" x="288.29" y="94.742" size="1.778" layer="96" rot="R180"/>
+</instance>
+<instance part="SINE_OUT" gate="G$1" x="299.72" y="88.9" smashed="yes">
+<attribute name="NAME" x="297.18" y="92.964" size="1.778" layer="95"/>
+</instance>
+<instance part="SUPPLY30" gate="GND" x="294.64" y="78.74" smashed="yes">
+<attribute name="VALUE" x="292.735" y="75.565" size="1.778" layer="96"/>
+</instance>
+<instance part="R32" gate="G$1" x="55.88" y="83.82" smashed="yes" rot="R180">
+<attribute name="NAME" x="59.69" y="82.3214" size="1.778" layer="95" rot="R180"/>
+<attribute name="VALUE" x="59.69" y="87.122" size="1.778" layer="96" rot="R180"/>
+</instance>
+<instance part="R33" gate="G$1" x="68.58" y="73.66" smashed="yes" rot="R270">
+<attribute name="NAME" x="70.0786" y="77.47" size="1.778" layer="95" rot="R270"/>
+<attribute name="VALUE" x="65.278" y="77.47" size="1.778" layer="96" rot="R270"/>
+</instance>
+<instance part="SUPPLY31" gate="GND" x="68.58" y="60.96" smashed="yes">
+<attribute name="VALUE" x="66.675" y="57.785" size="1.778" layer="96"/>
+</instance>
+<instance part="PULSE_OUT" gate="G$1" x="88.9" y="81.28" smashed="yes">
+<attribute name="NAME" x="86.36" y="85.344" size="1.778" layer="95"/>
+</instance>
+<instance part="SUPPLY32" gate="GND" x="83.82" y="71.12" smashed="yes">
+<attribute name="VALUE" x="81.915" y="67.945" size="1.778" layer="96"/>
+</instance>
+<instance part="PWM_INPUT" gate="G$1" x="40.64" y="162.56" smashed="yes" rot="R180">
+<attribute name="NAME" x="43.18" y="158.496" size="1.778" layer="95" rot="R180"/>
+</instance>
+<instance part="PULSE_WIDTH" gate="G$1" x="43.18" y="129.54" smashed="yes">
+<attribute name="NAME" x="38.1" y="132.08" size="1.778" layer="95" rot="R90"/>
+<attribute name="VALUE" x="40.64" y="132.08" size="1.778" layer="96" rot="R90"/>
+</instance>
+<instance part="SUPPLY33" gate="GND" x="53.34" y="165.1" smashed="yes">
+<attribute name="VALUE" x="51.435" y="161.925" size="1.778" layer="96"/>
+</instance>
+<instance part="SUPPLY34" gate="GND" x="63.5" y="139.7" smashed="yes">
+<attribute name="VALUE" x="61.595" y="136.525" size="1.778" layer="96"/>
+</instance>
+<instance part="R34" gate="G$1" x="78.74" y="152.4" smashed="yes">
+<attribute name="NAME" x="74.93" y="153.8986" size="1.778" layer="95"/>
+<attribute name="VALUE" x="74.93" y="149.098" size="1.778" layer="96"/>
+</instance>
+<instance part="SUPPLY35" gate="+12V" x="43.18" y="142.24" smashed="yes">
+<attribute name="VALUE" x="40.64" y="145.415" size="1.778" layer="96"/>
+</instance>
+<instance part="SUPPLY36" gate="GND" x="35.56" y="124.46" smashed="yes">
+<attribute name="VALUE" x="33.655" y="121.285" size="1.778" layer="96"/>
+</instance>
+<instance part="SUPPLY37" gate="G$1" x="43.18" y="116.84" smashed="yes">
+<attribute name="VALUE" x="40.005" y="112.141" size="1.778" layer="96"/>
+</instance>
+<instance part="R35" gate="G$1" x="78.74" y="129.54" smashed="yes">
+<attribute name="NAME" x="74.93" y="131.0386" size="1.778" layer="95"/>
+<attribute name="VALUE" x="74.93" y="126.238" size="1.778" layer="96"/>
+</instance>
+<instance part="PWM_CV" gate="G$1" x="63.5" y="152.4" smashed="yes">
+<attribute name="NAME" x="58.42" y="154.94" size="1.778" layer="95" rot="R90"/>
+<attribute name="VALUE" x="60.96" y="154.94" size="1.778" layer="96" rot="R90"/>
+</instance>
+<instance part="JP1" gate="G$1" x="170.18" y="228.6" smashed="yes">
+<attribute name="VALUE" x="170.18" y="205.74" size="1.778" layer="96"/>
+<attribute name="NAME" x="170.18" y="237.49" size="1.778" layer="95"/>
+</instance>
+<instance part="SUPPLY10" gate="GND" x="53.34" y="259.08" smashed="yes">
+<attribute name="VALUE" x="51.435" y="255.905" size="1.778" layer="96"/>
+</instance>
+<instance part="SUPPLY11" gate="GND" x="55.88" y="147.32" smashed="yes">
+<attribute name="VALUE" x="53.975" y="144.145" size="1.778" layer="96"/>
+</instance>
 </instances>
 <busses>
 </busses>
@@ -3301,7 +3420,7 @@ Standard 10-pin 0.1" header. Use with straight break away headers (SKU : PRT-001
 <pinref part="R4" gate="G$1" pin="1"/>
 <wire x1="81.28" y1="266.7" x2="96.52" y2="266.7" width="0.1524" layer="91"/>
 <junction x="96.52" y="266.7"/>
-<pinref part="R3" gate="G$1" pin="2"/>
+<pinref part="R37" gate="G$1" pin="2"/>
 <wire x1="114.3" y1="243.84" x2="96.52" y2="243.84" width="0.1524" layer="91"/>
 <wire x1="99.06" y1="292.1" x2="96.52" y2="292.1" width="0.1524" layer="91"/>
 <junction x="96.52" y="292.1"/>
@@ -3424,7 +3543,7 @@ Standard 10-pin 0.1" header. Use with straight break away headers (SKU : PRT-001
 </net>
 <net name="CV_B" class="0">
 <segment>
-<pinref part="R3" gate="G$1" pin="1"/>
+<pinref part="R37" gate="G$1" pin="1"/>
 <wire x1="132.08" y1="243.84" x2="124.46" y2="243.84" width="0.1524" layer="91"/>
 <label x="129.54" y="243.84" size="1.778" layer="95"/>
 </segment>
