@@ -3,7 +3,7 @@
 <eagle version="9.3.0">
 <drawing>
 <settings>
-<setting alwaysvectorfont="no"/>
+<setting alwaysvectorfont="yes"/>
 <setting keepoldvectorfont="yes"/>
 <setting verticaltext="up"/>
 </settings>
@@ -4504,7 +4504,7 @@ Standard 10-pin 0.1" header. Use with straight break away headers (SKU : PRT-001
 <text x="109.22" y="271.78" size="1.778" layer="91">R2 = +3300ppm/C thermistor
 In physical contact with 2n3906s
 2N3906s should be epoxied together</text>
-<text x="223.52" y="314.96" size="1.778" layer="91">Make C3 Polystyrene</text>
+<text x="223.52" y="314.96" size="1.778" layer="91">Make C3 NP0/C0G</text>
 <text x="241.3" y="269.24" size="1.778" layer="91">R10 = 1.2m for 12v
 was 1.5m for 15v
 https://muffwiggler.com/forum/viewtopic.php?t=49671</text>
